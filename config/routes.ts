@@ -53,7 +53,9 @@ export default [
   },
   {
     path: '/',
-    redirect: '/welcome',
+    layout: false,
+    name: 'landing',
+    component: './Home',
   },
   {
     path: '*',
