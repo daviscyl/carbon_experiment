@@ -143,4 +143,8 @@ export default defineConfig({
     strategy: 'normal',
   },
   requestRecord: {},
+  define: {
+    AUTH0_DOMAIN: 'dev-xo8ga7cm7q4czge5.us.auth0.com',
+    AUTH0_CLIENT_ID: 'fxCJw2iJRDaU9ihOZ05FBFar4nYAUPcp',
+  },
 });

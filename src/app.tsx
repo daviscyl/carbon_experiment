@@ -9,6 +9,7 @@ import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 import React from 'react';
+import { Auth0Provider } from '@auth0/auth0-react';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 
@@ -126,3 +127,20 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
 export const request = {
   ...errorConfig,
 };
+
+const AuthProvider = ({ children, routes }: any) => {
+  const newChildren = React.cloneElement(children, {
+    ...children.props,
+    routes,
+  });
+
+  return (
+    <Auth0Provider domain={AUTH0_DOMAIN} clientId={AUTH0_CLIENT_ID}>
+      {newChildren}
+    </Auth0Provider>
+  );
+};
+
+export function rootContainer(container: any) {
+  return React.createElement(AuthProvider, null, container);
+}
