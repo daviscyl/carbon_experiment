@@ -1,6 +1,7 @@
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { SelectLang, useModel } from '@umijs/max';
+import { withAuthenticationRequired } from '@auth0/auth0-react';
 import React from 'react';
 import Avatar from './AvatarDropdown';
 
@@ -54,4 +55,4 @@ const GlobalHeaderRight: React.FC = () => {
     </div>
   );
 };
-export default GlobalHeaderRight;
+export default withAuthenticationRequired(GlobalHeaderRight);
