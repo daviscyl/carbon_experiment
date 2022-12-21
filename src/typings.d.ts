@@ -20,3 +20,4 @@ declare module 'bizcharts-plugin-slider';
 declare const REACT_APP_ENV: 'test' | 'dev' | 'pre' | false;
 declare const AUTH0_DOMAIN: string;
 declare const AUTH0_CLIENT_ID: string;
+declare const DEPLOYMENT_BASE: string;

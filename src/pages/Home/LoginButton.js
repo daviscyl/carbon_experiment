@@ -7,7 +7,9 @@ const LoginButton = (props) => {
 
   return (
     <Button
-      onClick={() => loginWithRedirect({ redirectUri: 'http://localhost:8000/list' })}
+      onClick={() =>
+        loginWithRedirect({ redirectUri: window.location.origin + DEPLOYMENT_BASE + '/list' })
+      }
       {...props}
     />
   );

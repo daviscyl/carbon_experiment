@@ -94,8 +94,7 @@ export default defineConfig({
    * @doc https://umijs.org/docs/max/i18n
    */
   locale: {
-    // default zh-CN
-    default: 'zh-CN',
+    default: 'en-US',
     antd: true,
     // default true, when it is true, will use `navigator.language` overwrite default
     baseNavigator: true,
@@ -143,8 +142,18 @@ export default defineConfig({
     strategy: 'normal',
   },
   requestRecord: {},
+  //================ Deployment 配置 =================
+  // global variables
   define: {
     AUTH0_DOMAIN: 'dev-xo8ga7cm7q4czge5.us.auth0.com',
     AUTH0_CLIENT_ID: 'fxCJw2iJRDaU9ihOZ05FBFar4nYAUPcp',
+    DEPLOYMENT_BASE: '/carbon_experiment',
+  },
+  // Deploy to non-root environment:
+  base: '/carbon_experiment/',
+  publicPath: '/carbon_experiment/',
+  // build static routes so Github Pages can work
+  exportStatic: {
+    extraRoutePaths: ['/list', '/welcome'],
   },
 });

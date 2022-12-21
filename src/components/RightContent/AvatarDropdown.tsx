@@ -72,7 +72,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const onMenuClick = useCallback((event: MenuInfo) => {
     const { key } = event;
     if (key === 'logout') {
-      logout({ returnTo: window.location.origin });
+      logout({ returnTo: window.location.origin + DEPLOYMENT_BASE });
       return;
     }
     history.push(`/account/${key}`);
